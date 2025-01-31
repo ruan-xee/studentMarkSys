@@ -68,3 +68,7 @@ if __name__ == '__main__':
         print(nc)
     print(f"无效行的行号为：{invalid_row_numbers}")
     
+    for i in range(len(columnsList)):
+        if i == 0:
+            continue
+        print(f"{columnsList[i]} 的总分是 {count_score(name_columns, i-1)}")
