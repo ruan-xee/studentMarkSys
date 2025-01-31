@@ -19,6 +19,7 @@ def read_excel():
 
 """
 获取姓名列数组
+参数：pandas.DataFrame
 返回值：list[NameColumns] 和 无效行号数组
 """
 def get_name_columns(data):
@@ -42,6 +43,19 @@ def get_name_columns(data):
             # nc.add_score
             name_columns.append(nc)
     return name_columns, invalid_row_numbers
+
+"""
+统计某一列的总分,空行跳过
+参数：list[NameColumns] 和 列索引
+返回值：int
+"""
+def count_score(name_columns, index):
+    count = 0
+    for nc in name_columns:
+        if not pd.isna(nc.score[index]):
+            count += nc.score[index]
+    return count
+
 
 if __name__ == '__main__':
     data = read_excel()
