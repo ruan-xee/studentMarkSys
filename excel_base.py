@@ -9,7 +9,8 @@ from domain.name_columns import NameColumns
 '''
 def read_excel():
     #file_path = input("请将文件拖拽到这里或粘贴文件路径: ").strip('\"')  # 去除可能存在的引号
-    file_path = "c:/Users/RuanXee/Desktop/cece.xlsx"
+    # file_path = "c:/Users/RuanXee/Desktop/cece.xlsx"
+    file_path = "/Users/ruanzuhui/DevSpace/myProject/pythonTools/studentMarkSys/cece.xlsx"
     try:
         return pd.read_excel(file_path, sheet_name=0, header=0)
     except FileNotFoundError:
